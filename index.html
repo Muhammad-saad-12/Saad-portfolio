@@ -8,265 +8,447 @@
     />
     <title>Muhammad Saad – Full-Stack Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav>
-      <div class="wrap">
-        <a href="#hero"><b>&lt;/&gt;</b> Muhammad Saad </a>
-        <button id="menu" aria-label="Menu">☰</button>
-        <ul id="links">
-          <li><a href="#expertise">Expertise</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#tech">Tech Stack</a></li>
-          <li><a href="#career">Career</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#certs">Awards</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+      <div class="navbar__container">
+        <a href="#hero" class="navbar__logo">
+          <span class="navbar__logo-code">&lt;/&gt;</span>
+          <span class="navbar__logo-text">Muhammad Saad</span><span class="navbar__logo-accent">.</span>
+        </a>
+        <nav class="navbar__nav">
+          <a href="#expertise" class="navbar__link">Expertise</a>
+          <a href="#about" class="navbar__link">About</a>
+          <a href="#tech" class="navbar__link">Tech Stack</a>
+          <a href="#career" class="navbar__link">Career</a>
+          <a href="#projects" class="navbar__link">Projects</a>
+          <a href="#certs" class="navbar__link">Awards</a>
+          <a href="#contact" class="navbar__link">Contact</a>
+        </nav>
+        <div class="navbar__actions">
+          <a href="#contact" class="navbar__cta">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>Get in Touch</span>
+          </a>
+          <button class="navbar__mobile-toggle" id="menuToggle" aria-label="Toggle menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
       </div>
-    </nav>
+    </header>
+
+    <!-- MOBILE MENU DRAWER -->
+    <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu__header">
+        <span class="mobile-menu__title">Menu</span>
+        <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav class="mobile-menu__nav">
+        <a href="#expertise" class="mobile-menu__link">Expertise</a>
+        <a href="#about" class="mobile-menu__link">About</a>
+        <a href="#tech" class="mobile-menu__link">Tech Stack</a>
+        <a href="#career" class="mobile-menu__link">Career</a>
+        <a href="#projects" class="mobile-menu__link">Projects</a>
+        <a href="#certs" class="mobile-menu__link">Awards</a>
+        <a href="#contact" class="mobile-menu__link">Contact</a>
+      </nav>
+      <div class="mobile-menu__footer">
+        <a href="#contact" class="mobile-menu__cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>Get in Touch</span>
+        </a>
+      </div>
+    </div>
 
     <!-- 1. HERO -->
-    <header id="hero">
-      <canvas id="net"></canvas>
-      <div class="wrap">
-        <div>
-          <h1>Hi, I’m <span>Muhammad Saad</span></h1>
-          <div class="role">Full-Stack Developer</div>
-          <p class="lead">
+    <section class="hero" id="hero">
+      <div class="hero__background">
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+        <div class="hero__grid"></div>
+        <canvas id="net"></canvas>
+      </div>
+      <div class="hero__container">
+        <div class="hero__content">
+          <h1 class="hero__title">
+            Hi, I’m <span class="hero__name">Muhammad Saad</span>
+          </h1>
+          <h2 class="hero__subtitle">Full-Stack Software Developer | Backend Engineering | AI-Powered Applications</h2>
+          <p class="hero__description">
             I build modern web applications and AI-powered solutions, turning
             ideas into functional digital experiences. Passionate about software
             innovation, intelligent automation, and creating technology that
             solves real-world problems.
           </p>
-          <div class="row">
-            <a class="btn pri" href="#contact">✉ Get in Touch</a
-            ><a class="btn" href="#projects">View Projects →</a>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" href="#contact">
+              <svg class="btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span class="btn__text">Get in Touch</span>
+            </a>
+            <a class="btn btn--secondary btn--lg" href="#projects">
+              <span class="btn__text">View Projects</span>
+              <svg class="btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
           </div>
-          <div class="soc">
+          <div class="hero__socials">
             <a
               href="https://github.com/Muhammad-saad-12"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
+              class="hero__social-link"
               aria-label="GitHub"
-              >GH</a
-            ><a
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a
               href="https://www.linkedin.com/in/muhammad-saad-360b3a354"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
+              class="hero__social-link"
               aria-label="LinkedIn"
-              >in</a
             >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
           </div>
         </div>
-        <div class="photo">
-          <div
-            style="background-image: url(&quot;me2.jpeg&quot;)"
-            role="img"
-            aria-label="Photo of Muhammad Saad"
-          ></div>
+        <div class="hero__image-wrapper">
+          <div class="hero__image-ring">
+            <img src="me2.jpeg" alt="Muhammad Saad" class="hero__image" />
+          </div>
         </div>
       </div>
-    </header>
+    </section>
 
     <!-- 2. EXPERTISE -->
-    <section id="expertise">
-      <div class="wrap">
-        <h2>Expertise</h2>
-        <p class="sub">What I bring to the table</p>
-        <div class="grid3" id="expGrid"></div>
+    <section class="expertise" id="expertise">
+      <div class="expertise__container">
+        <div class="section-header section-header--left">
+          <h2 class="section-header__title">Expertise</h2>
+          <p class="section-header__subtitle">
+            What I bring to the table — from full-stack architectures and backend systems to API integrations and intelligent AI applications.
+          </p>
+        </div>
+        <div class="expertise__grid" id="expGrid"></div>
       </div>
     </section>
 
     <!-- 3. ABOUT -->
-    <section id="about">
-      <div class="wrap">
-        <h2>About Me</h2>
-        <div class="about" style="margin-top: 36px">
-          <div>
-            <p>
-            I enjoy turning ideas into practical digital solutions through 
-            software development and emerging AI technologies. 
-            With a background in Software Engineering, I have experience working across
-             frontend and backend development, 
-            building applications, integrating APIs, and working with databases.
+    <section class="about" id="about">
+      <div class="about__container">
+        <div class="section-header section-header--left">
+          <h2 class="section-header__title">About Me</h2>
+          <p class="section-header__subtitle">
+            A glimpse into my software engineering background, development experience, and problem-solving approach.
+          </p>
+        </div>
+        <div class="about__grid">
+          <div class="about__text">
+            <p class="about__para">
+             I'm a Full-Stack Software Developer with 1+ year of hands-on experience building modern web applications, backend systems, and AI-powered solutions. I hold a Bachelor's degree in Software Engineering from the University of Gujrat.
+
+
             </p>
-            <p>
-            I am particularly interested in AI-driven applications, intelligent automation,
-             and modern software development practices. 
-            I continuously explore new tools and technologies to improve
-             how software is designed, developed, and delivered.
+            <p class="about__para">
+              I work with technologies including React, Next.js, TypeScript, Node.js, Express.js, PHP, Laravel, and databases such as MongoDB, MySQL, and PostgreSQL. My experience includes building responsive interfaces, RESTful APIs, authentication systems, and database-driven applications.
             </p>
-            <p>
-           Always open to meaningful collaborations, challenging projects, and opportunities to grow.
+            <p class="about__para">
+             I enjoy turning ideas into practical software solutions, solving real-world problems, and continuously improving my engineering skills. I'm particularly interested in Full-Stack engineering, scalable application architecture, and AI integration.
             </p>
-          </div>
-          <div class="video-wrap">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/EiETErCx7Ro?si=W-tZkMEjFA9qVN2-" 
-          title="Muhammad Saad – Introduction" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-          <div class="card profile">
-            <div class="pbar">
-              <i></i><i></i><i></i><span>profile.summary</span>
+
+            <div class="about__highlights">
+              <div class="about__highlight">
+                <span class="about__highlight-icon">🎓</span>
+                <span class="about__highlight-value">B.S. SE</span>
+                <span class="about__highlight-label">Univ. of Gujrat</span>
+              </div>
+              <div class="about__highlight">
+                <span class="about__highlight-icon">💼</span>
+                <span class="about__highlight-value">Intern</span>
+                <span class="about__highlight-label">TNV Solutions</span>
+              </div>
+              <div class="about__highlight">
+                <span class="about__highlight-icon">⚙️</span>
+                <span class="about__highlight-value">Full-Stack</span>
+                <span class="about__highlight-label">Web & Backend</span>
+              </div>
+              <div class="about__highlight">
+                <span class="about__highlight-icon">🤖</span>
+                <span class="about__highlight-value">AI Focus</span>
+                <span class="about__highlight-label">LLMs & Automation</span>
+              </div>
             </div>
-            <dl>
-              <dt>Education</dt>
-              <dd>
-                B.S. Software Engineering<br /><small
-                  >University of Gujrat, Pakistan · Oct 2022 – Jun 2026 ·
-                  Graduated</small
-                >
-              </dd>
-              <dt>Experience</dt>
-              <dd>
-                Full-Stack Developer Intern<br /><small
-                  >TNV Solutions · Jun 2026 – Oct 2026</small
-                >
-              </dd>
-      
-              <dt>Location</dt>
-              <dd>Gujrat, Punjab, Pakistan</dd>
-            </dl>
+          </div>
+          <div class="about__video-side">
+            <div class="about__video-wrapper">
+             
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/EiETErCx7Ro?si=q_dKlhjCD6-6_8LQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
+            </div>
+            <div class="about__video-caption">
+              <span class="about__video-caption-line"></span>
+              <span class="about__video-caption-text">Watch Introduction — Skills &amp; Experience Overview</span>
+              <span class="about__video-caption-line"></span>
+            </div>
+            <div class="about__profile-card">
+              <div class="about__pbar">
+                <div class="about__pbar-dots">
+                  <span class="about__pbar-dot about__pbar-dot--red"></span>
+                  <span class="about__pbar-dot about__pbar-dot--yellow"></span>
+                  <span class="about__pbar-dot about__pbar-dot--green"></span>
+                </div>
+                <span class="about__pbar-title">profile.summary</span>
+              </div>
+              <dl class="about__dl">
+                <div>
+                  <dt class="about__dt">Education</dt>
+                  <dd class="about__dd">
+                    B.S. Software Engineering<br />
+                    <small>University of Gujrat, Pakistan · Oct 2022 – Jun 2026 · Graduated</small>
+                  </dd>
+                </div>
+                <div>
+                  <dt class="about__dt">Experience</dt>
+                  <dd class="about__dd">
+                    Software Development Intern<br />
+                    <small>TNV Solutions · Jun 2026 – Oct 2026</small>
+                  </dd>
+                </div>
+                <div>
+                  <dt class="about__dt">Location</dt>
+                  <dd class="about__dd">Gujrat, Punjab, Pakistan</dd>
+                </div>
+                <div>
+                  <dt class="about__dt">Opportunity Status</dt>
+                  <dd class="about__dd">Open to Junior Software Engineer &amp; Full-Stack roles</dd>
+                </div>
+              </dl>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 4. TECH STACK -->
-    <section id="tech">
-      <div class="wrap">
-        <h2>Tech Stack</h2>
-        <p class="sub">The languages, frameworks, and tools I work with.</p>
-        <div class="stack" id="stack"></div>
+    <section class="tech-stack" id="tech">
+      <div class="tech-stack__container">
+        <div class="section-header section-header--left">
+          <h2 class="section-header__title">Tech Stack</h2>
+          <p class="section-header__subtitle">
+            The programming languages, frameworks, databases, developer tooling, and AI assistants I work with.
+          </p>
+        </div>
+        <div class="tech-stack__grid" id="stack"></div>
       </div>
     </section>
 
     <!-- 5. CAREER -->
-    <section id="career">
-      <div class="wrap">
-        <h2>Career History</h2>
-        <div class="tl" id="tl" style="margin-top: 44px"></div>
+    <section class="career-section" id="career">
+      <div class="career-section__container">
+        <div class="section-header section-header--left">
+          <h2 class="section-header__title">Career History</h2>
+          <p class="section-header__subtitle">
+            Professional development journey, industry experience, and software engineering milestones.
+          </p>
+        </div>
+        <div class="timeline" id="tl"></div>
       </div>
     </section>
 
     <!-- 6. PROJECTS -->
-    <section id="projects">
-      <div class="wrap">
-        <h2>Projects</h2>
-        <p class="sub">A few things I’ve built recently.</p>
-        <div class="grid3" id="projGrid"></div>
+    <section class="projects-section" id="projects">
+      <div class="projects-section__container">
+        <div class="section-header section-header--left">
+          <h2 class="section-header__title">Projects</h2>
+          <p class="section-header__subtitle">
+            A selection of full-stack web applications, AI-powered tools, and management platforms I've engineered.
+          </p>
+        </div>
+        <div class="projects-grid" id="projGrid"></div>
       </div>
     </section>
 
-    <!-- 7. CERTIFICATIONS -->
-    <section id="certs">
-      <div class="wrap">
-        <h2>Certifications &amp; Awards</h2>
-        <div class="grid4" id="certGrid" style="margin-top: 40px"></div>
+    <!-- 7. CERTIFICATIONS & AWARDS -->
+    <section class="certifications-section" id="certs">
+      <div class="certifications-section__container">
+        <div class="section-header section-header--left">
+          <h2 class="section-header__title">Certifications &amp; Awards</h2>
+          <p class="section-header__subtitle">
+            Verified credentials, industry certifications, and competitive hackathon achievements.
+          </p>
+        </div>
+        <div class="certifications-section__grid" id="certGrid"></div>
       </div>
     </section>
 
     <!-- 8. CONTACT -->
-    <section id="contact">
-      <div class="wrap">
-        <div class="contact">
-          <div>
-            <h2>Let’s Connect</h2>
-            <p class="sub" style="font-size: 1.1rem; margin-bottom: 30px">
-              I’m open to suitable junior software engineering and full-stack
-              development opportunities, collaboration, and interesting software
-              projects. Feel free to reach out.
+    <section class="contact-section" id="contact">
+      <div class="contact-section__container">
+        <div class="contact-section__grid">
+          <div class="contact-section__left">
+            <div class="section-header section-header--left">
+              <h2 class="section-header__title">Let's Connect</h2>
+              <p class="section-header__subtitle">
+                Got a project or opportunity waiting to be realized? Let's collaborate and make it happen!
+              </p>
+            </div>
+            <p class="contact-section__tagline">
+              I'm open to suitable junior software engineering and full-stack development opportunities, collaboration, and interesting software projects. Feel free to reach out directly through any channel below.
             </p>
-            <div class="info">
-              <i>✉</i>
-              <div>
-                <small>EMAIL</small
-                ><a href="mailto:saad.work006@gmail.com"
-                  >saad.work006@gmail.com</a
-                >
+            <div class="contact-info">
+              <div class="contact-info__item">
+                <div class="contact-info__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="contact-info__body">
+                  <span class="contact-info__label">Email</span>
+                  <a href="mailto:saad.work006@gmail.com" class="contact-info__value">saad.work006@gmail.com</a>
+                </div>
               </div>
-            </div>
-            <div class="info">
-              <i>☎</i>
-              <div>
-                <small>PHONE</small
-                ><a href="tel:+923206029070">+92 320 6029070</a>
+              <div class="contact-info__item">
+                <div class="contact-info__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <div class="contact-info__body">
+                  <span class="contact-info__label">Phone</span>
+                  <a href="tel:+923206029070" class="contact-info__value">+92 320 6029070</a>
+                </div>
               </div>
-            </div>
-            <div class="info">
-              <i>📍</i>
-              <div><small>LOCATION</small>Gujrat, Punjab, Pakistan</div>
-            </div>
-            <div class="info">
-              <i>in</i>
-              <div>
-                <small>LINKEDIN</small
-                ><a
-                  href="https://www.linkedin.com/in/muhammad-saad-360b3a354"
-                  target="_blank"
-                  rel="noopener"
-                  >linkedin.com/in/muhammad-saad-360b3a354</a
-                >
+              <div class="contact-info__item">
+                <div class="contact-info__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="contact-info__body">
+                  <span class="contact-info__label">Location</span>
+                  <span class="contact-info__value contact-info__value--plain">Gujrat, Punjab, Pakistan</span>
+                </div>
               </div>
-            </div>
-            <div class="info">
-              <i>GH</i>
-              <div>
-                <small>GITHUB</small
-                ><a
-                  href="https://github.com/Muhammad-saad-12"
-                  target="_blank"
-                  rel="noopener"
-                  >github.com/Muhammad-saad-12</a
-                >
+              <div class="contact-info__item">
+                <div class="contact-info__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </div>
+                <div class="contact-info__body">
+                  <span class="contact-info__label">LinkedIn</span>
+                  <a href="https://www.linkedin.com/in/muhammad-saad-360b3a354" target="_blank" rel="noopener noreferrer" class="contact-info__value">linkedin.com/in/muhammad-saad-360b3a354</a>
+                </div>
+              </div>
+              <div class="contact-info__item">
+                <div class="contact-info__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </div>
+                <div class="contact-info__body">
+                  <span class="contact-info__label">GitHub</span>
+                  <a href="https://github.com/Muhammad-saad-12" target="_blank" rel="noopener noreferrer" class="contact-info__value">github.com/Muhammad-saad-12</a>
+                </div>
               </div>
             </div>
           </div>
-          <form class="card" id="form">
-            <div class="two">
-              <input name="n" placeholder="Your Name *" required /><input
-                name="e"
-                placeholder="Your Email / Phone *"
-                required
-              />
-            </div>
-            <textarea name="m" placeholder="Message *" required></textarea>
-            <p class="note">
-              Submitting opens your email app with this message pre-filled,
-              addressed to me.
-            </p>
-            <button class="btn pri" type="submit">➤ Compose Email</button>
-          </form>
+          <div class="contact-section__right">
+            <form class="contact-form-card" id="form" novalidate>
+              <div class="contact-form-card__header">
+                <h3 class="contact-form-card__title">Send a Message</h3>
+                <p class="contact-form-card__subtitle">Fill in the fields below to start a conversation.</p>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name" class="form-label">Your Name <span class="required">*</span></label>
+                  <input type="text" id="name" name="n" class="form-input" placeholder="What's your name?" required autocomplete="name" />
+                  <span class="form-error" id="nameError">Please enter your name</span>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="form-label">Email or Phone <span class="required">*</span></label>
+                  <input type="text" id="email" name="e" class="form-input" placeholder="How can I reach you?" required autocomplete="email" />
+                  <span class="form-error" id="emailError">Please enter your email or phone</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Message <span class="required">*</span></label>
+                <textarea id="message" name="m" class="form-textarea" rows="6" placeholder="Tell me about your project, role, or inquiry..." required></textarea>
+                <span class="form-error" id="messageError">Please enter your message</span>
+              </div>
+              <p class="form-note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                Submitting opens your email app pre-filled with this message addressed to me.
+              </p>
+              <button class="contact-submit" type="submit" id="submitBtn">
+                <span>Send Message</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
 
-    <footer>
-      <div style="margin-bottom: 10px">
-        <a
-          href="https://github.com/Muhammad-saad-12"
-          target="_blank"
-          rel="noopener"
-          >GitHub</a
-        >
-        ·
-        <a
-          href="https://www.linkedin.com/in/muhammad-saad-360b3a354"
-          target="_blank"
-          rel="noopener"
-          >LinkedIn</a
-        >
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <a href="#hero" class="footer__logo">
+              <span class="footer__logo-code">&lt;/&gt;</span>
+              <span class="footer__logo-text">Muhammad Saad</span><span class="footer__logo-accent">.</span>
+            </a>
+            <p class="footer__tagline">
+              Junior Full-Stack Developer specializing in modern web applications, scalable backend systems, and AI-powered solutions.
+            </p>
+          </div>
+          <div>
+            <h4 class="footer__nav-title">Navigation</h4>
+            <nav class="footer__nav" aria-label="Footer navigation">
+              <a href="#expertise" class="footer__link">Expertise</a>
+              <a href="#about" class="footer__link">About</a>
+              <a href="#tech" class="footer__link">Tech Stack</a>
+              <a href="#career" class="footer__link">Career</a>
+              <a href="#projects" class="footer__link">Projects</a>
+              <a href="#certs" class="footer__link">Awards</a>
+              <a href="#contact" class="footer__link">Contact</a>
+            </nav>
+          </div>
+          <div>
+            <h4 class="footer__social-title">Connect</h4>
+            <div class="footer__socials">
+              <a href="https://github.com/Muhammad-saad-12" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/muhammad-saad-360b3a354" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <span>LinkedIn</span>
+              </a>
+              <a href="mailto:saad.work006@gmail.com" class="footer__social-link" aria-label="Email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <span>Email</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            &copy; 2026 Muhammad Saad. Designed &amp; built with <span class="footer__heart">💜</span>
+          </p>
+          <a href="#hero" class="footer__back-to-top" aria-label="Back to top">
+            <span>Back to Top</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+          </a>
+        </div>
       </div>
-      A portfolio designed &amp; built by
-      <a class="l" href="#hero">Muhammad Saad</a> with 💜
     </footer>
 
     <script src="script.js"></script>
